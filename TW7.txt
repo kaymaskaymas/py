@@ -1,0 +1,29 @@
+if __name__== '__main__' :
+    myFile = open("av.txt")
+    allLines = myFile.read().splitlines()
+    avgMarks = 0;
+    maxAvg = 0;
+    for line in allLines:
+        (name, m1, m2, m3, usn) = map(str, line.split(","))
+        avgMarks = (int(m1) + int(m2) + int(m3))/3
+        print(usn, name, m1, m2, m3)
+        if avgMarks > maxAvg:
+            maxAvg = avgMarks
+
+    print("max class average %5.2f " %maxAvg)
+    
+
+# IN TXT FILE PUT THIS INPUT
+# omkar pm , 23, 23, 23, 20U6660
+# omkar pr , 23, 17, 33, 20U6670
+# akash , 23, 20, 23, 20U6680
+# mahesh , 22, 17, 23, 20U6770
+
+# OUTPUT
+#  20U6660 omkar pm   23  23  23
+#  20U6670 omkar pr   23  17  33
+#  20U6680 akash   23  20  23
+#  20U6770 mahesh   22  17  23
+# max class average 24.33 
+# 
+# Process finished with exit code 0

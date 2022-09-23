@@ -1,0 +1,97 @@
+MAX = 3
+
+
+def enq(queue):
+    if len(queue) == MAX:
+        print("Queue Overflow")
+    else:
+        n = input("Enter the element to add: ")
+        queue.append(n)
+
+
+def deq(queue):
+    if len(queue) == 0:
+        print("Queue Underflow")
+    else:
+        print("Popped item: ")
+        return queue.pop(0)
+
+
+def disp(queue):
+    if len(queue) == 0:
+        print("Queue Underflow")
+    else:
+        print("The Queue is: ")
+        for item in queue:
+            print(item, end='\t')
+
+
+def qfront(queue):
+    if len(queue) == 0:
+        print("Queue Empty")
+    else:
+        return queue[0]
+
+
+def qrear(queue):
+    if len(queue) == 0:
+        print("Queue Empty")
+    else:
+        return queue[len(queue) - 1]
+
+
+def main():
+    queue = []
+    while True:
+        print("\n1)EnQ\t2)DeQ\t3)Disp\t4)QFront\t5)QRear")
+        n = int(input("Enter your choice: "))
+        if n == 1:
+            enq(queue)
+        elif n == 2:
+            print("The Dequeud item is: ", deq(queue))
+        elif n == 3:
+            disp(queue)
+        elif n == 4:
+            print("The queue front is: ", qfront(queue))
+        elif n == 5:
+            print("The queue rear is: ", qrear(queue))
+        else:
+            print("Invalid choice...")
+            break
+if __name__ == "__main__":
+    main()
+    
+    
+    
+# 1)EnQ	2)DeQ	3)Disp	4)QFront	5)QRear
+# Enter your choice: 1
+# Enter the element to add: 11
+# 
+# 1)EnQ	2)DeQ	3)Disp	4)QFront	5)QRear
+# Enter your choice: 1
+# Enter the element to add: 12
+# 
+# 1)EnQ	2)DeQ	3)Disp	4)QFront	5)QRear
+# Enter your choice: 3
+# The Queue is: 
+# 11	12	
+# 1)EnQ	2)DeQ	3)Disp	4)QFront	5)QRear
+# Enter your choice: 2
+# Popped item: 
+# The Dequeud item is:  11
+# 
+# 1)EnQ	2)DeQ	3)Disp	4)QFront	5)QRear
+# Enter your choice: 1
+# Enter the element to add: 15
+# 
+# 1)EnQ	2)DeQ	3)Disp	4)QFront	5)QRear
+# Enter your choice: 1
+# Enter the element to add: 18
+# 
+# 1)EnQ	2)DeQ	3)Disp	4)QFront	5)QRear
+# Enter your choice: 4
+# The queue front is:  12
+# 
+# 1)EnQ	2)DeQ	3)Disp	4)QFront	5)QRear
+# Enter your choice: 5
+# The queue rear is:  18

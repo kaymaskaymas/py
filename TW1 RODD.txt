@@ -1,0 +1,68 @@
+queue=[]
+def addQ(i):
+    queue.append(i)
+    print(i , "is added")
+def delQ():
+    queue.pop()
+    print("element popped")
+def disp():
+    for x in queue:
+        print(x)
+while(1):
+    print("1.enqueue \t  2.dequeue\t  3.display\n")
+    opt = int(input("enter your choice:"))
+    if opt == 1:
+        x=int(input("enter data:"))
+        addQ(x)
+
+    elif opt == 2:
+        delQ()
+    elif opt == 3:
+        disp()
+    else:
+        exit(1)
+
+
+# 1.enqueue 	  2.dequeue	  3.display
+# 
+# enter your choice:1
+# enter data:23
+# 23 is added
+# 1.enqueue 	  2.dequeue	  3.display
+# 
+# enter your choice:1
+# enter data:23
+# 23 is added
+# 1.enqueue 	  2.dequeue	  3.display
+# 
+# enter your choice:1
+# enter data:24
+# 24 is added
+# 1.enqueue 	  2.dequeue	  3.display
+# 
+# enter your choice:1
+# enter data:26
+# 26 is added
+# 1.enqueue 	  2.dequeue	  3.display
+# 
+# enter your choice:3
+# 23
+# 23
+# 24
+# 26
+# 1.enqueue 	  2.dequeue	  3.display
+# 
+# enter your choice:2
+# element popped
+# 1.enqueue 	  2.dequeue	  3.display
+# 
+# enter your choice:2
+# element popped
+# 1.enqueue 	  2.dequeue	  3.display
+# 
+# enter your choice:3
+# 23
+# 23
+# 1.enqueue 	  2.dequeue	  3.display
+# 
+# enter your choice:

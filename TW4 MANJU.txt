@@ -1,0 +1,103 @@
+# Expt 4 Inheritance
+
+# class declaration
+# Base(Super) class
+class Person:
+    def __init__(self, fn, ln, email):
+        self.fname = fn
+        self.lname = ln
+        self.email = email
+
+    def disp(self):
+        print(self.fname, self.lname, self.email)
+
+
+# Subclass
+class Customer(Person):
+    def __init__(self, fn, ln, email, no):
+        Person.__init__(self, fn, ln, email)  # calling the base class constructor(Person's init)
+        self.no = no
+
+    def disp(self):
+        Person.disp(self)
+        print("Customer No: ", self.no)
+
+
+class Employee(Person):
+    def __init__(self, fn, ln, email, pan):
+        Person.__init__(self, fn, ln, email)  # calling the base class constructor(Person's init)
+        self.PAN = pan
+
+    def disp(self):
+        Person.disp(self)
+        print("Employee Pan: ", self.PAN)
+
+
+# Non member function
+def show(ob):
+    if isinstance(ob, Customer):
+        print("Customer : ")
+        ob.disp()
+    elif isinstance(ob, Employee):
+        print("Employee : ")
+        ob.disp()
+    elif isinstance(ob, Person):
+        print("Person : ")
+        ob.disp()
+
+#Driver code
+def main():
+    choice ='y'
+    while choice == 'y':
+        fn, ln, email = input("Enter fname, lname,and email : ").split()
+        print("1: Customer      2: Employee     3: Person    4: Exit")
+        opt = int(input("Enter your option : "))
+        if opt == 1:
+            no = int(input("Enter Customer No : "))
+            c = Customer(fn, ln, email, no)
+            show(c)
+
+        elif opt == 2:
+            pan = input("Enter Employee PAN : ")
+            e = Employee(fn, ln, email, pan)
+            show(e)
+
+        elif opt == 3:
+
+            p = Person(fn, ln, email)
+            show(p)
+        elif opt == 4:
+            break
+        else:
+            print("Invalid option")
+
+        choice = input("Customer (y/n) ? : ")
+
+if __name__ == "__main__":
+    main()
+
+
+# Enter fname, lname,and email : omi umadi omi@gmail.com
+# 1: Customer      2: Employee     3: Person    4: Exit
+# Enter your option : 1
+# Enter Customer No : 69
+# Customer : 
+# omi umadi omi@gmail.com
+# Customer No:  69
+# Customer (y/n) ? : y
+# Enter fname, lname,and email : amon nojib amon@gmail.com
+# 1: Customer      2: Employee     3: Person    4: Exit
+# Enter your option : 3
+# Person : 
+# amon nojib amon@gmail.com
+# Customer (y/n) ? : y
+# Enter fname, lname,and email : samyok samyok samyok@gmail.com
+# 1: Customer      2: Employee     3: Person    4: Exit
+# Enter your option : 2
+# Enter Employee PAN : PP6969
+# Employee : 
+# samyok samyok samyok@gmail.com
+# Employee Pan:  PP6969
+# Customer (y/n) ? : n
+# 
+# Process finished with exit code 0
