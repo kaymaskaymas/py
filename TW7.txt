@@ -18,7 +18,9 @@ with open("Termwork7.txt") as inF:
         i=0
         for line in reader:
             outF.write(line[4]+'  '+str(avg[i])+'\n')
+            i=i+1
 print("Class Topper has scored average mks: ",np.max(avg))
+
     
 
 # IN TXT FILE PUT THIS INPUT
