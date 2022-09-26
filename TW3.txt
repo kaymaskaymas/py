@@ -37,7 +37,7 @@ def TitleSearch():
 
 def PriceSearch():
     try:
-        price=float(input("Enter price to search the books under that price2,Wit,Des Machale,500: "))
+        price=float(input("Enter price to search the books under that price: "))
         if price<=0:
             raise ValueError("Invalid Price")
         else:
